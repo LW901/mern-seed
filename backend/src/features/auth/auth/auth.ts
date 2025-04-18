@@ -62,6 +62,8 @@ const join = async (
     }
     const passwordData = pwd.create(password)
     const activationCode = helper.randomNumber(1000, 10000).toString()
+
+    show.debug(`[AUTH][JOIN] activationCode: ${activationCode}`);
     const created = new Date().toISOString()
     const data = {
       email,
@@ -111,6 +113,8 @@ const resend = async (
       throw new ClientError(1001, 'parameters not found')
     }
     const activationCode = helper.randomNumber(1000, 10000).toString()
+    show.debug(`[AUTH][RESEND] activationCode: ${activationCode}`);
+
     let result = await local.resend(id, activationCode)
     await mail.send(`${templateDir}/join.ejs`, 'Join', result.email, {
       user: result,
@@ -243,6 +247,8 @@ const recover = async (
       throw new ClientError(1001, 'parameters not found')
     }
     const recoveryCode = helper.randomNumber(1000, 10000).toString()
+
+    show.debug(`[AUTH][RECOVER] activationCode: ${activationCode}`);
     let result = await local.recover(email, recoveryCode)
     show.debug('[AUTH][RECOVER] Success')
     await mail.send(`${templateDir}/recover.ejs`, 'Recovery', result.email, {
