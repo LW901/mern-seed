@@ -248,7 +248,7 @@ const recover = async (
     }
     const recoveryCode = helper.randomNumber(1000, 10000).toString()
 
-    show.debug(`[AUTH][RECOVER] activationCode: ${activationCode}`);
+    show.debug(`[AUTH][RECOVER] recoveryCode: ${recoveryCode}`);
     let result = await local.recover(email, recoveryCode)
     show.debug('[AUTH][RECOVER] Success')
     await mail.send(`${templateDir}/recover.ejs`, 'Recovery', result.email, {

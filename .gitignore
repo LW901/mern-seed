@@ -66,3 +66,6 @@ typings/
 
 # Production
 build/
+
+# Testing
+frontend/cypress/*
