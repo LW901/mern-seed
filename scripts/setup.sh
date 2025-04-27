@@ -51,8 +51,8 @@ askEnvConfig() {
 }
 
 envConfig() {
-  devCookieSecret=$(openssl rand -hex 12)
-  prodCookieSecret=$(openssl rand -hex 12)
+  devCookieSecret=$(openssl rand -hex 32)
+  prodCookieSecret=$(openssl rand -hex 32)
   envConfigDev
   envConfigProd
   envReview
