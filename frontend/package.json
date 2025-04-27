@@ -21,7 +21,6 @@
     "axios": "^0.27.2",
     "cypress": "^10.10.0",
     "mimelib": "^0.3.1",
-    "node-sass": "^7.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.34.2",
@@ -30,12 +29,13 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^9.0.8",
     "redux-persist": "^6.0.0",
+    "sass": "^1.87.0",
     "socket.io-client": "^4.5.2",
     "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "HTTPS=true react-scripts start",
+    "start": "NODE_ENV=development && HTTPS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll --verbose",
     "eject": "react-scripts eject",

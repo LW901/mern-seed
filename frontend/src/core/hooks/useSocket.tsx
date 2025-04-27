@@ -5,6 +5,9 @@ const useSocket = () => {
   const { getApiUrl } = useConfig()
   const url = getApiUrl()
   const socket = io(url, { transports: ['websocket'] })
+  socket.on('connect', () => {
+    console.log('Connected to WebSocket server');
+  });
 
   /**
    * Send message

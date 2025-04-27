@@ -9,7 +9,7 @@
   "scripts": {
     "test": "TEST=true ts-mocha -p './tsconfig.json' 'src/*/*.test.ts' 'src/*/*/*.test.ts' 'src/*/*/*/*.test.ts'",
     "test:coverage": "nyc yarn test",
-    "start": "nodemon --config nodemon.json",
+    "start": "NODE_ENV=development && nodemon --config nodemon.json",
     "build": "webpack --config webpack.config.js",
     "prod": "node index.js",
     "prod:pm2": "pm2 start pm2.config.json",
