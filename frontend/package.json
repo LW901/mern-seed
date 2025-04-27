@@ -3,6 +3,7 @@
   "version": "3.0.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
@@ -21,7 +22,6 @@
     "axios": "^0.27.2",
     "cypress": "^10.10.0",
     "mimelib": "^0.3.1",
-    "node-sass": "^7.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.34.2",
@@ -30,6 +30,7 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^9.0.8",
     "redux-persist": "^6.0.0",
+    "sass": "^1.87.0",
     "socket.io-client": "^4.5.2",
     "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"
@@ -58,5 +59,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
