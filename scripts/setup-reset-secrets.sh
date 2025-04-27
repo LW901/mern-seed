@@ -3,7 +3,7 @@
 clear
 echo "MERN-SEED Secrets Reset"
 echo ""
-echo "Regenerating JWT keys and SSL certificates (Dev + Prod)"
+echo "Regenerating JWT keys, SSL certificates, and Cookie secret (Dev + Prod)"
 echo ""
 
 prepare() {
@@ -37,12 +37,23 @@ generateJwtProd() {
   echo "✅ Prod JWT keys generated: ./backend/.jwt/secret.prod.pem & public.prod.pem"
 }
 
+generateCookieSecret() {
+  echo "Generating Cookie Secret..."
+  devCookieSecret=$(openssl rand -hex 32)
+  prodCookieSecret=$(openssl rand -hex 32)
+  echo "✅ Cookie secret generated"
+  echo "COOKIE_SECRET=$devCookieSecret" >> ./backend/.env/.env.development
+  echo "COOKIE_SECRET=$prodCookieSecret" >> ./backend/.env/.env.production
+  echo "✅ Cookie secret written to backend .env files"
+}
+
 start() {
   prepare
   generateSslDev
   generateSslProd
   generateJwtDev
   generateJwtProd
+  generateCookieSecret
   echo ""
   echo "🎉 Secrets reset complete!"
   echo ""
