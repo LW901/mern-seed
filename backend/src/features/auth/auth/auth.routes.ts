@@ -4,6 +4,13 @@ import express from 'express'
 const router = express.Router()
 import auth from './index'
 
+// --- ✨ Log every request coming into this auth router
+router.use((req, res, next) => {
+    console.log(`[Auth Router] ${req.method} ${req.originalUrl} - Body:`, req.body);
+    next();
+  });
+  
+  // --- Your auth routes
 router.get('/local/check', auth.check)
 router.put('/local/join', auth.join)
 router.post('/local/resend', auth.resend)
