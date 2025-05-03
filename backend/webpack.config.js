@@ -25,6 +25,10 @@ module.exports = {
           to: './package.json',
         },
         {
+          from: './yarn.lock',
+          to: './yarn.lock',
+        },
+        {
           from: './.env/.env.production',
           to: './.env/.env.production',
         },
