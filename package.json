@@ -12,15 +12,15 @@
     "start:frontend": "yarn --cwd frontend/ start",
     "start": "concurrently \"yarn start:backend\" \"yarn start:frontend\"",
     "build": "yarn --cwd frontend/ build && yarn --cwd backend/ build",
-    "prod": "yarn --cwd build/ prod",
+    "prod:build": "yarn build && yarn --cwd build/ install && yarn --cwd build/ prod",
     "prod:pm2": "yarn --cwd build/ prod:pm2",
-    "prod:pm2:kill": "yarn --cwd build/ prod:pm2:kill",
+    "prod:pmc2:kill": "yarn --cwd build/ prod:pm2:kill",
     "docker:dev": "docker-compose -f docker-compose.development.yml up",
     "docker:prod": "docker-compose -f docker-compose.production.yml up"
   },
   "dependencies": {
     "concurrently": "^4.1.0",
     "nodemon": "^2.0.15",
-    "sass": "^1.86.3"
+    "spdy": "^4.0.2"
   }
 }
